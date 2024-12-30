@@ -82,7 +82,7 @@ func (ec *Client) ChainID(ctx context.Context) (*big.Int, error) {
 // Note that loading full blocks requires two requests. Use HeaderByHash
 // if you don't need all transactions or uncle headers.
 func (ec *Client) BlockByHash(ctx context.Context, hash common.Hash) (*types.Block, error) {
-	return ec.getBlock(ctx, "eth_getBlockByHash", hash, true)
+	return ec.getBlock(ctx, "eth_getBlockByHash", hash, false)
 }
 
 // BlockByNumber returns a block from the current canonical chain. If number is nil, the
